@@ -3,10 +3,13 @@ package efs.task.reflection.json;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
+import com.fasterxml.jackson.annotation.*;
 /**
  * TODO: Użyj tu odpowiednich adnotacji z biblioteki Jackson
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({"ProductID", "ProductName", "ProductPrice", "DateOfProduction", "DateOfExpiry"})
 public class ProductDTO {
     private Long id;
 
